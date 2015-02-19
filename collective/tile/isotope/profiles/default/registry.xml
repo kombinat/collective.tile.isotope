@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<registry xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+
+    <record name="plone.app.tiles">
+        <value purge="false">
+            <element>collective.tile.isotope</element>
+        </value>
+    </record>
+
+</registry>

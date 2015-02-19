@@ -1,0 +1,42 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="collective.tile.isotope">
+
+
+    <include package="plone.tiles" file="meta.zcml" />
+    <include package="collective.cover" />
+
+    <five:registerPackage package="." initialize=".initialize" />
+
+    <genericsetup:registerProfile
+        name="default"
+        title="collective.cover tile with isotope listing and filtering"
+        directory="profiles/default"
+        description="Based on Collection tile"
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        />
+
+
+    <plone:tile
+        name="collective.tile.isotope"
+        title="Isotope Collection"
+        description="A tile that shows Collection in Isotope style."
+        icon="++resource++collective.tile.isotope/tile-isotope.png"
+        add_permission="cmf.ModifyPortalContent"
+        schema=".tile.IIsotopeTile"
+        class=".tile.IsotopeTile"
+        permission="zope2.View"
+        for="*"
+        />
+
+    <browser:resourceDirectory
+        name="collective.tile.isotope"
+        directory="static"
+        layer=".interfaces.IIsotopeTileLayer"
+        />
+
+</configure>

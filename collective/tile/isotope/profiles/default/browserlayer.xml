@@ -1,0 +1,4 @@
+<layers>
+    <layer name="collective.tile.isotope.layer"
+           interface="collective.tile.isotope.interfaces.IIsotopeTileLayer" />
+</layers>
